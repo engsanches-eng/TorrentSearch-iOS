@@ -100,8 +100,8 @@ enum TorznabConnectionResult: Equatable {
         case .established: return L("Conexão estabelecida")
         case .connectionFailed: return L("Não foi possível conectar ao servidor")
         case .invalidApiKey: return L("Chave de API inválida")
-        case .applicationError(let c): return L("Erro do indexador (código %d)", c)
-        case .unexpectedResponse(let c): return L("Resposta inesperada (código %d)", c)
+        case .applicationError(let c): return L("Erro do indexador (código %ld)", c)
+        case .unexpectedResponse(let c): return L("Resposta inesperada (código %ld)", c)
         case .unexpectedError: return L("Erro inesperado")
         }
     }

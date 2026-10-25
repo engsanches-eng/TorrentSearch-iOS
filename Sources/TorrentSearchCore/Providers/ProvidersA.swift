@@ -184,7 +184,7 @@ final class BangumiMoe: SearchProvider, LatestTorrentsProvider {
 
     func search(query: String, category: Category) async throws -> [Torrent] {
         // O original envia o texto já codificado; mantemos o comportamento.
-        parse(try await net.postJson("\(url)/api/v2/torrent/search", payload: ["query": query]))
+        parse(try await net.postJson("\(url)/api/v2/torrent/search", payload: ["query": query.uriDecoded]))
     }
     func getLatestTorrents(category: Category) async throws -> [Torrent] {
         parse(try await net.getJson("\(url)/api/torrent/latest"))
@@ -351,7 +351,7 @@ final class Btsow: SearchProvider {
     let enabledByDefault = false
 
     func search(query: String, category: Category) async throws -> [Torrent] {
-        let payload: [Any] = [["search": query], 30, 1]
+        let payload: [Any] = [["search": query.uriDecoded], 30, 1]
         let json = try await net.postJson("https://btsow.live/bts/data/api/search", payload: payload)
         return ((json as? JObj)?.objs("data") ?? []).compactMap { o -> Torrent? in
             guard let n = o.str("name")?.replacingOccurrences(of: "<em>", with: "").replacingOccurrences(of: "</em>", with: ""),

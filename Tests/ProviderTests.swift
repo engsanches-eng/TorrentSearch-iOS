@@ -72,6 +72,7 @@ final class ProviderTests: XCTestCase {
         if c == [.porn] { return "amateur" }
         if c == [.series] { return "the office" }
         if c == [.apps] { return "ubuntu" }
+        if c == [.movies] { return "matrix" }
         return "ubuntu"
     }
 

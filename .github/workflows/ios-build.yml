@@ -1,0 +1,73 @@
+name: "App iOS: compila e publica o IPA"
+
+on:
+  push:
+    branches: [main]
+    paths: ["App/**", "UI/**", "Sources/**", "Resources/**", "project.yml", ".github/workflows/ios-build.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: 26.6
+      - uses: actions/checkout@v4
+      - name: Gerar projeto Xcode (XcodeGen)
+        run: |
+          brew install xcodegen
+          xcodegen generate
+      - name: Compilar (sem assinatura)
+        run: |
+          set +e -uo pipefail
+          xcodebuild -project TorrentSearch.xcodeproj -scheme TorrentSearch -configuration Release \
+            -sdk iphoneos -destination generic/platform=iOS \
+            -archivePath "$RUNNER_TEMP/ts.xcarchive" \
+            -skipPackagePluginValidation -skipMacroValidation \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            clean archive 2>&1 | tee "$RUNNER_TEMP/build.log"
+          STATUS=${PIPESTATUS[0]}
+          if [ "$STATUS" -ne 0 ]; then
+            grep -E "error:" "$RUNNER_TEMP/build.log" | sed 's#^/Users/runner/work/[^/]*/[^/]*/##' | awk '!seen[$0]++' | head -80 > "$RUNNER_TEMP/errors.txt" || true
+            python3 - "$RUNNER_TEMP/errors.txt" "$RUNNER_TEMP/build.log" <<'PY'
+          import sys
+          def enc(s): return s.replace('%','%25').replace('\r','').replace('\n','%0A')
+          errs=open(sys.argv[1],errors='replace').read().strip()
+          tail=open(sys.argv[2],errors='replace').read().splitlines()[-40:]
+          if errs: print("::error title=ERROS::"+enc(errs[:7000]))
+          print("::error title=FIM DO LOG::"+enc("\n".join(l[:300] for l in tail)))
+          PY
+            exit "$STATUS"
+          fi
+      - name: Empacotar IPA e verificar privacidade
+        run: |
+          set -euo pipefail
+          APP="$RUNNER_TEMP/ts.xcarchive/Products/Applications/TorrentSearch.app"
+          test -d "$APP"
+          mkdir -p "$RUNNER_TEMP/ipa/Payload"
+          cp -R "$APP" "$RUNNER_TEMP/ipa/Payload/"
+          cd "$RUNNER_TEMP/ipa"
+          # Auditoria: nenhum SDK de rastreamento/anúncio pode estar no binário
+          BIN="Payload/TorrentSearch.app/TorrentSearch"
+          if strings "$BIN" | grep -iE "firebase|crashlytics|GADMobileAds|AppsFlyer|Adjust|Mixpanel|amplitude|sentry|facebook|appmetrica|onesignal" ; then
+            echo "::error::Encontrado SDK de rastreamento"; exit 1
+          fi
+          echo "Domínios presentes no binário:" && strings "$BIN" | grep -oE "https?://[a-zA-Z0-9.-]+\.[a-z]{2,}" | sort -u
+          zip -qry TorrentSearch.ipa Payload
+          ls -lh TorrentSearch.ipa
+      - uses: actions/upload-artifact@v4
+        with:
+          name: TorrentSearch
+          path: ${{ runner.temp }}/ipa/TorrentSearch.ipa
+      - name: Publicar Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v0.5.2-build${{ github.run_number }}
+          name: Torrent Search para iPhone (build ${{ github.run_number }})
+          body: IPA não assinado. Instale pelo AltStore em My Apps → +.
+          files: ${{ runner.temp }}/ipa/TorrentSearch.ipa

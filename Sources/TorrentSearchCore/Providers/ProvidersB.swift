@@ -211,7 +211,7 @@ final class Knaben: SearchProvider, LatestTorrentsProvider, TopTorrentsProvider 
     }
     private func body(_ query: String?, _ category: Category, _ orderBy: String) -> [String: Any] {
         var b: [String: Any] = ["size": 300, "order_by": orderBy, "order_direction": "desc", "hide_unsafe": true, "hide_xxx": false]
-        if let query { b["query"] = query }
+        if let query { b["query"] = query.uriDecoded }
         let ids: [Int]
         switch category {
         case .all: ids = []

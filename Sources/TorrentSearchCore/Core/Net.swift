@@ -10,7 +10,7 @@ struct CloudflareChallengeError: LocalizedError {
 
 struct HTTPStatusError: LocalizedError {
     let status: Int
-    var errorDescription: String? { L("O site respondeu com erro HTTP %d.", status) }
+    var errorDescription: String? { L("O site respondeu com erro HTTP %ld.", status) }
 }
 
 /// Cliente HTTP do app. Só fala com os sites dos buscadores que o usuário ativou.
