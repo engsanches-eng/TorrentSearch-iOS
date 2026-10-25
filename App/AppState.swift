@@ -99,7 +99,6 @@ final class AppState: ObservableObject {
     func enableAll(_ ids: [String]) {
         let allowed = allProviders.filter { ids.contains($0.id) }
             .filter { !$0.isCloudflareProtected || unlockedProviderIds.contains($0.id) }
-            .filter { nsfwMode || !isNSFWProvider($0) }
         enabledProviderIds = (enabledProviderIds ?? []).union(allowed.map(\.id))
     }
 

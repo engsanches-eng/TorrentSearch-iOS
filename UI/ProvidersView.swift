@@ -14,7 +14,6 @@ struct ProvidersView: View {
 
     var body: some View {
         let providers = app.allProviders
-            .filter { app.nsfwMode || !app.isNSFWProvider($0) }
             .filter { categoryFilter == .all || $0.supportedCategories.contains(categoryFilter) }
             .filter { filter.trimmed.isEmpty || $0.name.localizedCaseInsensitiveContains(filter) }
             .sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
