@@ -1,0 +1,55 @@
+name: "Núcleo (Linux): compila e testa os buscadores"
+
+on:
+  push:
+    branches: [main]
+    paths: ["Sources/**", "Tests/**", "Package.swift", ".github/workflows/core-linux.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Versão do Swift
+        run: swift --version
+      - name: Compilar
+        run: |
+          set +e
+          swift build --build-tests 2>&1 | tee build.log
+          STATUS=${PIPESTATUS[0]}
+          if [ "$STATUS" -ne 0 ]; then
+            grep -E "error:" build.log | sed 's#^.*/Sources/#Sources/#; s#^.*/Tests/#Tests/#' | awk '!seen[$0]++' | head -80 > errors.txt
+            python3 - <<'PY'
+          def enc(s): return s.replace('%','%25').replace('\r','').replace('\n','%0A')
+          e=open('errors.txt').read()
+          print("::error title=ERROS DE COMPILACAO::"+enc(e[:7000] or open('build.log').read()[-5000:]))
+          PY
+            exit 1
+          fi
+      - name: Testes (inclui busca real em cada site)
+        env:
+          LIVE: "1"
+          REPORT_PATH: ${{ github.workspace }}/provider-report.json
+        run: |
+          set +e
+          swift test 2>&1 | tee test.log
+          echo "status=$?"
+          grep "^PROVIDER " test.log || true
+      - name: Publicar relatório no branch ci-results
+        if: always()
+        run: |
+          mkdir -p /tmp/out
+          cp provider-report.json /tmp/out/ 2>/dev/null || echo "[]" > /tmp/out/provider-report.json
+          cp test.log /tmp/out/ 2>/dev/null || true
+          cp build.log /tmp/out/ 2>/dev/null || true
+          cd /tmp/out
+          git init -q -b ci-results
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -qm "Relatório ${GITHUB_SHA::7}"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" ci-results
