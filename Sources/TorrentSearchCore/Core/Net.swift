@@ -32,7 +32,6 @@ final class Net: NSObject, URLSessionTaskDelegate {
         c.httpCookieAcceptPolicy = .always
         c.httpAdditionalHeaders = ["User-Agent": Net.userAgent]
         c.requestCachePolicy = .useProtocolCachePolicy
-        c.waitsForConnectivity = false
         return URLSession(configuration: c)
     }()
 

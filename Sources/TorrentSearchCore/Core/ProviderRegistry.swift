@@ -7,5 +7,6 @@ enum ProviderRegistry {
         BitSearch(), BlueRoms(), Bt4g(), Btsow(), Dmhy(), EpubLibre(),
         Ext(), Eztv(), FileMood(), FitGirlRepacks(), InternetArchive(), Knaben(),
         LimeTorrents(), LinuxTracker(), MegaPeer(), Mikan(), MyPornClub(), NekoBT(),
+        NoNameClub(), Nyaa(), OxTorrent(), Rutor(), SubsPlease(), Sukebei(),
     ]
 }

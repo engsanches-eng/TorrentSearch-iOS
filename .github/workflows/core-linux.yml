@@ -23,7 +23,7 @@ jobs:
           swift build --build-tests 2>&1 | tee build.log
           STATUS=${PIPESTATUS[0]}
           if [ "$STATUS" -ne 0 ]; then
-            grep -E "error:" build.log | sed 's#^.*/Sources/#Sources/#; s#^.*/Tests/#Tests/#' | awk '!seen[$0]++' | head -80 > errors.txt
+            sed 's/\x1b\[[0-9;]*m//g' build.log | grep -E "error:" | grep -v "SwiftCompile\|Build failed\|^ *|" | sed 's#^.*/Sources/#Sources/#; s#^.*/Tests/#Tests/#' | awk '!seen[$0]++' | head -80 > errors.txt
             python3 - <<'PY'
           def enc(s): return s.replace('%','%25').replace('\r','').replace('\n','%0A')
           e=open('errors.txt').read()
