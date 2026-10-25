@@ -1,0 +1,72 @@
+Building for debugging...
+[Computing dependencies]
+[Pre-planning 1 / 273]
+[Planning deferred tasks]
+Build complete! (1.22 secs)
+Test Suite 'All tests' started at 2026-10-25 18:50:15.833
+Test Suite 'Debug-linux-x86_64.xctest' started at 2026-10-25 18:50:15.950
+Test Suite 'ProviderTests' started at 2026-10-25 18:50:15.950
+Test Case 'ProviderTests.testLiveSearch' started at 2026-10-25 18:50:15.950
+PROVIDER 0magnet results=50 error=- magnet=fetched-ok
+PROVIDER 1337x results=-1 error=CloudflareChallengeError(url: "https://1337x.to/search/ubuntu/1/") magnet=-
+PROVIDER anilibria results=17 error=- magnet=ok
+PROVIDER animetosho results=75 error=- magnet=ok
+PROVIDER anirena results=-1 error=CloudflareChallengeError(url: "https://anirena.com?q=ubuntu&page=1") magnet=-
+PROVIDER audiobookbay results=9 error=- magnet=fetched-ok
+PROVIDER bangumimoe results=30 error=- magnet=ok
+PROVIDER bitsearch results=-1 error=CloudflareChallengeError(url: "https://bitsearch.to/search?q=ubuntu&page=1&sortBy=seeders") magnet=-
+PROVIDER blueroms results=-1 error=CloudflareChallengeError(url: "https://www.blueroms.ws/search?g=0&p=0&q=minecraft") magnet=-
+PROVIDER bt4g results=-1 error=CloudflareChallengeError(url: "https://bt4gprx.com/search?q=ubuntu&category=all&orderby=seeders&p=1") magnet=-
+PROVIDER btdigg results=0 error=- magnet=-
+PROVIDER btsow results=30 error=- magnet=ok
+PROVIDER dmhy results=2 error=- magnet=ok
+PROVIDER epublibre results=18 error=- magnet=fetched-ok
+PROVIDER extdotto results=-1 error=CloudflareChallengeError(url: "https://ext.to/browse/?q=ubuntu") magnet=-
+PROVIDER eztvx results=-1 error=CloudflareChallengeError(url: "https://eztvx.to/search/the%20office") magnet=-
+PROVIDER filemood results=20 error=- magnet=ok
+PROVIDER fitgirlrepacks results=10 error=- magnet=fetched-ok
+PROVIDER internetarchive results=94 error=- magnet=ok
+PROVIDER knaben results=300 error=- magnet=ok
+PROVIDER limetorrents results=-1 error=CloudflareChallengeError(url: "https://limetorrents.fun/search/all/ubuntu/date/1/") magnet=-
+PROVIDER linuxtracker results=-1 error=Error Domain=NSURLErrorDomain Code=-1007 "(null)"UserInfo={NSUnderlyingError=Error Domain=NSURLErrorDomain Code=-1007 "(null)"UserInfo={NSLocalizedDescription=too many HTTP redirects}, NSLocalizedDescription=too many HTTP redirects, NSErrorFailingURLKey=https://linuxtracker.org/torrents?q=ubuntu, NS magnet=-
+PROVIDER megapeer results=1 error=- magnet=fetched-ok
+PROVIDER mikanproject results=1000 error=- magnet=ok
+PROVIDER mypornclub results=-1 error=CloudflareChallengeError(url: "https://myporn.club/s/amateur/seeders") magnet=-
+PROVIDER nekobt results=50 error=- magnet=ok
+PROVIDER nonameclub results=50 error=- magnet=fetched-ok
+PROVIDER nyaasi results=1 error=- magnet=ok
+PROVIDER oxtorrent results=-1 error=CloudflareChallengeError(url: "https://oxtorrent.co/recherche/ubuntu") magnet=-
+PROVIDER rutorinfo results=100 error=- magnet=ok
+PROVIDER subsplease results=90 error=- magnet=ok
+PROVIDER sukebeinyaa results=75 error=- magnet=ok
+PROVIDER thepiratebay results=-1 error=CloudflareChallengeError(url: "https://apibay.org/q.php?q=ubuntu&cat=0") magnet=-
+PROVIDER therarbag results=-1 error=CloudflareChallengeError(url: "https://therarbg.com/get-posts/keywords:ubuntu") magnet=-
+PROVIDER tokyotoshokan results=-1 error=CloudflareChallengeError(url: "https://tokyotosho.info/search.php?terms=ubuntu&type=0&searchName=true") magnet=-
+PROVIDER torrent9 results=-1 error=CloudflareChallengeError(url: "https://www6.torrent9.to/search_torrent/ubuntu.html") magnet=-
+PROVIDER torrentdatabase results=-1 error=CloudflareChallengeError(url: "https://developify.ca/search?q=ubuntu") magnet=-
+PROVIDER torrentdownloadinfo results=-1 error=CloudflareChallengeError(url: "https://torrentdownload.info/search?q=ubuntu") magnet=-
+PROVIDER torrentdownloads results=-1 error=CloudflareChallengeError(url: "https://torrentdownloads.pro/search/?s_cat=0&search=ubuntu") magnet=-
+PROVIDER torrentkitty results=-1 error=CloudflareChallengeError(url: "https://torrentkitty.tv/search/ubuntu") magnet=-
+PROVIDER torrentscsv results=25 error=- magnet=ok
+PROVIDER torrentz results=-1 error=Error Domain=NSURLErrorDomain Code=-1003 "(null)"UserInfo={NSLocalizedDescription=Could not resolve host: torrentz2.nz, NSUnderlyingError=Error Domain=NSURLErrorDomain Code=-1003 "(null)"UserInfo={NSLocalizedDescription=Could not resolve host: torrentz2.nz}, NSErrorFailingURLKey=https://torrentz2.nz magnet=-
+PROVIDER uindex results=-1 error=CloudflareChallengeError(url: "https://uindex.org/search.php?search=ubuntu&c=0") magnet=-
+PROVIDER xxxclub results=-1 error=CloudflareChallengeError(url: "https://xxxclub.to/torrents/search/all/amateur") magnet=-
+PROVIDER xxxtracker results=-1 error=CloudflareChallengeError(url: "https://xxxtor.com/b.php?search=amateur") magnet=-
+PROVIDER ytsmx results=24 error=- magnet=ok
+Test Case 'ProviderTests.testLiveSearch' passed (5.624 seconds)
+Test Case 'ProviderTests.testRegistryIsConsistent' started at 2026-10-25 18:50:21.573
+Test Case 'ProviderTests.testRegistryIsConsistent' passed (0.0 seconds)
+Test Case 'ProviderTests.testTorznabParser' started at 2026-10-25 18:50:21.574
+Test Case 'ProviderTests.testTorznabParser' passed (0.001 seconds)
+Test Case 'ProviderTests.testUtils' started at 2026-10-25 18:50:21.575
+Test Case 'ProviderTests.testUtils' passed (0.001 seconds)
+Test Suite 'ProviderTests' passed at 2026-10-25 18:50:21.576
+	 Executed 4 tests, with 0 failures (0 unexpected) in 5.626 (5.626) seconds
+Test Suite 'Debug-linux-x86_64.xctest' passed at 2026-10-25 18:50:21.576
+	 Executed 4 tests, with 0 failures (0 unexpected) in 5.626 (5.626) seconds
+Test Suite 'All tests' passed at 2026-10-25 18:50:21.576
+	 Executed 4 tests, with 0 failures (0 unexpected) in 5.626 (5.626) seconds
+◇ Test run started.
+↳ Testing Library Version: 6.4 (efd8d65801f569d)
+↳ Target Platform: x86_64-unknown-linux-gnu
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

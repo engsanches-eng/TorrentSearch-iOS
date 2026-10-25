@@ -1,0 +1,591 @@
+[
+  {
+    "cloudflare" : false,
+    "id" : "0magnet",
+    "magnet" : "fetched-ok",
+    "name" : "0Magnet",
+    "results" : 50,
+    "sample" : {
+      "category" : "Porn",
+      "date" : "2026-09-17T00:00:00Z",
+      "details" : "https:\/\/9mag.net\/!lSNX",
+      "name" : "[HD Uncensored] N0462 素人娘拉致監禁汁濁輪カン Amateur girl kidnapping confinement juvenile gangbang \/ Yuri Matsushita",
+      "peers" : -1,
+      "seeders" : -1,
+      "size" : "2.71 GB"
+    },
+    "seconds" : 1
+  },
+  {
+    "cloudflare" : true,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/1337x.to\/search\/ubuntu\/1\/\")",
+    "id" : "1337x",
+    "name" : "1337x",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "id" : "anilibria",
+    "magnet" : "ok",
+    "name" : "AniLibria",
+    "results" : 17,
+    "sample" : {
+      "category" : "Anime",
+      "date" : "2026-07-09T18:27:17Z",
+      "details" : "https:\/\/www.anilibria.top\/anime\/releases\/release\/one-piece",
+      "name" : "One Piece - AniLiberty.TOP [WEBRip 1080p][AVC][1-28]",
+      "peers" : 3,
+      "seeders" : 11,
+      "size" : "44.04 GB"
+    },
+    "seconds" : 1
+  },
+  {
+    "cloudflare" : false,
+    "id" : "animetosho",
+    "magnet" : "ok",
+    "name" : "AnimeTosho",
+    "results" : 75,
+    "sample" : {
+      "category" : "Anime",
+      "date" : "2026-05-06T00:00:00Z",
+      "details" : "https:\/\/animetosho.org\/view\/one-piece-vol002-dvdrip-480p-x265-10bit-aac-multi-up.n2106671",
+      "name" : "One.Piece.Vol002.DVDRip.480p.x265.10bit.AAC.Multi-uP",
+      "peers" : 10,
+      "seeders" : 2,
+      "size" : "1.874 GB"
+    },
+    "seconds" : 1
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/anirena.com?q=ubuntu&page=1\")",
+    "id" : "anirena",
+    "name" : "AniRena",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "id" : "audiobookbay",
+    "latest" : 9,
+    "magnet" : "fetched-ok",
+    "name" : "AudioBookBay",
+    "results" : 9,
+    "sample" : {
+      "category" : "Books",
+      "date" : "2026-10-18T00:00:00Z",
+      "details" : "https:\/\/audiobookbay.lu\/abss\/harryk-potter-and-the-philosphers-stone-full-cast-edition-jk-rowling\/",
+      "name" : "Harry Potter and the Philospher’s Stone (Full Cast Edition - J.K Rowling",
+      "peers" : -1,
+      "seeders" : -1,
+      "size" : "487.76 MB"
+    },
+    "seconds" : 3
+  },
+  {
+    "cloudflare" : false,
+    "id" : "bangumimoe",
+    "latest" : 30,
+    "magnet" : "ok",
+    "name" : "BangumiMoe",
+    "results" : 30,
+    "sample" : {
+      "category" : "Anime",
+      "date" : "2026-09-28T02:01:37Z",
+      "details" : "https:\/\/bangumi.moe\/torrent\/6ab9ca819605d5c6906d7fc5",
+      "name" : "[黒ネズミたち] 海贼王 \/ One Piece - 1180 (B-Global 3840x2160 HEVC AAC MKV)",
+      "peers" : 0,
+      "seeders" : 0,
+      "size" : "1.04 GB"
+    },
+    "seconds" : 1
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/bitsearch.to\/search?q=ubuntu&page=1&sortBy=seeders\")",
+    "id" : "bitsearch",
+    "name" : "BitSearch",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/www.blueroms.ws\/search?g=0&p=0&q=minecraft\")",
+    "id" : "blueroms",
+    "name" : "BlueRoms",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : true,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/bt4gprx.com\/search?q=ubuntu&category=all&orderby=seeders&p=1\")",
+    "id" : "bt4g",
+    "name" : "BT4G",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "id" : "btdigg",
+    "name" : "BTDigg",
+    "results" : 0,
+    "seconds" : 1
+  },
+  {
+    "cloudflare" : false,
+    "id" : "btsow",
+    "magnet" : "ok",
+    "name" : "Btsow",
+    "results" : 30,
+    "sample" : {
+      "category" : "",
+      "date" : "",
+      "details" : "https:\/\/btsow.live\/magnet\/detail\/611f70899d4e1d6a9c39cfc925f103dfef630328",
+      "name" : "ubuntu-24.04.2-desktop-amd​64.iso",
+      "peers" : -1,
+      "seeders" : -1,
+      "size" : "5.91 GB"
+    },
+    "seconds" : 1
+  },
+  {
+    "cloudflare" : false,
+    "id" : "dmhy",
+    "latest" : 80,
+    "magnet" : "ok",
+    "name" : "Dmhy",
+    "results" : 2,
+    "sample" : {
+      "category" : "Other",
+      "date" : "2010-04-30T13:31:00Z",
+      "details" : "https:\/\/share.dmhy.org\/topics\/view\/171928_Ubuntu_10_04_LST_32_Bit_699MB_ISO.html",
+      "name" : "[ 10.04 LST][32 Bit][699MB][ISO]",
+      "peers" : -1,
+      "seeders" : -1,
+      "size" : "699.4 MB"
+    },
+    "seconds" : 1,
+    "top" : 80
+  },
+  {
+    "cloudflare" : false,
+    "id" : "epublibre",
+    "latest" : 18,
+    "magnet" : "fetched-ok",
+    "name" : "EpubLibre",
+    "results" : 18,
+    "sample" : {
+      "category" : "Books",
+      "date" : "",
+      "details" : "https:\/\/epublibre.org\/libro\/detalle\/64038",
+      "name" : "Harry Potter: La precuela - J. K. Rowling",
+      "peers" : -1,
+      "seeders" : -1,
+      "size" : ""
+    },
+    "seconds" : 4,
+    "top" : 18
+  },
+  {
+    "cloudflare" : true,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/ext.to\/browse\/?q=ubuntu\")",
+    "id" : "extdotto",
+    "name" : "Ext",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : true,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/eztvx.to\/search\/the%20office\")",
+    "id" : "eztvx",
+    "name" : "Eztv",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "id" : "filemood",
+    "magnet" : "ok",
+    "name" : "FileMood",
+    "results" : 20,
+    "sample" : {
+      "category" : "Other",
+      "date" : "",
+      "details" : "https:\/\/filemood.com\/ubuntu-26.04-desktop-amd64.iso-dafc8c076ca2f3ed376eeae7c76a0d6be2415c45.html",
+      "name" : "ubuntu-26.04-desktop-amd64.iso",
+      "peers" : 16,
+      "seeders" : 1178,
+      "size" : "6.5 GB"
+    },
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "id" : "fitgirlrepacks",
+    "latest" : 8,
+    "magnet" : "fetched-ok",
+    "name" : "FitGirl Repacks",
+    "results" : 10,
+    "sample" : {
+      "category" : "Games",
+      "date" : "2026-10-03T18:52:03Z",
+      "details" : "https:\/\/fitgirl-repacks.site\/minecraft-dungeons-2\/",
+      "name" : "Minecraft Dungeons II – v1.1.1.0 + 2 DLCs [Monkey Repack]",
+      "peers" : -1,
+      "seeders" : -1,
+      "size" : ""
+    },
+    "seconds" : 1
+  },
+  {
+    "cloudflare" : false,
+    "id" : "internetarchive",
+    "magnet" : "ok",
+    "name" : "InternetArchive",
+    "results" : 94,
+    "sample" : {
+      "category" : "Other",
+      "date" : "2022-02-27T06:39:11Z",
+      "details" : "https:\/\/archive.org\/details\/wiki-ubuntufandomcom",
+      "name" : "Wiki - Unofficial Ubuntu Wiki",
+      "peers" : -1,
+      "seeders" : -1,
+      "size" : "10.15 MB"
+    },
+    "seconds" : 1
+  },
+  {
+    "cloudflare" : false,
+    "id" : "knaben",
+    "latest" : 300,
+    "magnet" : "ok",
+    "name" : "Knaben",
+    "results" : 300,
+    "sample" : {
+      "category" : "Apps",
+      "date" : "2026-04-25T15:35:00Z",
+      "details" : "https:\/\/knaben.xyz\/thepiratebay\/description.php?id=82917197",
+      "name" : "ubuntu-26.04-desktop-amd64.iso",
+      "peers" : 16,
+      "seeders" : 134,
+      "size" : "6.07 GB"
+    },
+    "seconds" : 3,
+    "top" : 300
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/limetorrents.fun\/search\/all\/ubuntu\/date\/1\/\")",
+    "id" : "limetorrents",
+    "name" : "LimeTorrents",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "error" : "Error Domain=NSURLErrorDomain Code=-1007 \"(null)\"UserInfo={NSUnderlyingError=Error Domain=NSURLErrorDomain Code=-1007 \"(null)\"UserInfo={NSLocalizedDescription=too many HTTP redirects}, NSLocalizedDescription=too many HTTP redirects, NSErrorFailingURLKey=https:\/\/linuxtracker.org\/torrents?q=ubuntu, NS",
+    "id" : "linuxtracker",
+    "name" : "LinuxTracker",
+    "results" : -1,
+    "seconds" : 3
+  },
+  {
+    "cloudflare" : false,
+    "id" : "megapeer",
+    "latest" : 114,
+    "magnet" : "fetched-ok",
+    "name" : "MegaPeer",
+    "results" : 1,
+    "sample" : {
+      "category" : "",
+      "date" : "2014-11-10T00:00:00Z",
+      "details" : "https:\/\/megapeer.vip\/torrent\/49915\/ubuntu-businesspack-1404-i386-amd64-noyabr-2014-pc",
+      "name" : "Ubuntu BusinessPack (14.04 [i386 + amd64] [ноябрь]) (2014) PC",
+      "peers" : 3,
+      "seeders" : 1,
+      "size" : "4.54 GB"
+    },
+    "seconds" : 2,
+    "top" : 210
+  },
+  {
+    "cloudflare" : false,
+    "id" : "mikanproject",
+    "magnet" : "ok",
+    "name" : "Mikan",
+    "results" : 1000,
+    "sample" : {
+      "category" : "Anime",
+      "date" : "2026-09-28T16:47:00Z",
+      "details" : "https:\/\/mikanani.me\/Home\/Episode\/5a46994e26102dd7d1c48ef8c14e4282df61f2e6",
+      "name" : "[Skymoon-Raws][One Piece 海贼王][1180][ViuTV][WEB-RIP][CHT][SRT][1080p][MKV]",
+      "peers" : -1,
+      "seeders" : -1,
+      "size" : "457.9 MB"
+    },
+    "seconds" : 4
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/myporn.club\/s\/amateur\/seeders\")",
+    "id" : "mypornclub",
+    "name" : "MyPornClub",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "id" : "nekobt",
+    "latest" : 50,
+    "magnet" : "ok",
+    "name" : "NekoBT",
+    "results" : 50,
+    "sample" : {
+      "category" : "Anime",
+      "date" : "2026-10-11T20:49:38Z",
+      "details" : "https:\/\/nekobt.to\/torrents\/14351917616136",
+      "name" : "[HatSubs] One Piece 1169-1180 (WEB 1080p)",
+      "peers" : 0,
+      "seeders" : 6,
+      "size" : "16.13 GiB"
+    },
+    "seconds" : 5,
+    "top" : 50
+  },
+  {
+    "cloudflare" : false,
+    "id" : "nonameclub",
+    "latest" : 48,
+    "magnet" : "fetched-ok",
+    "name" : "NoNameClub",
+    "results" : 50,
+    "sample" : {
+      "category" : "Series",
+      "date" : "2014-03-18T17:35:21Z",
+      "details" : "https:\/\/nnmclub.to\/forum\/viewtopic.php?t=768069",
+      "name" : "Юрий Шатохин | Linux Ubuntu и Mint Росинка вводная для начинающих (2014) [PCRec]",
+      "peers" : 0,
+      "seeders" : 2,
+      "size" : "427.08 MB"
+    },
+    "seconds" : 3,
+    "top" : 50
+  },
+  {
+    "cloudflare" : false,
+    "id" : "nyaasi",
+    "latest" : 75,
+    "magnet" : "ok",
+    "name" : "Nyaa",
+    "results" : 1,
+    "sample" : {
+      "category" : "Apps",
+      "date" : "2009-11-03T07:03:00Z",
+      "details" : "https:\/\/nyaa.si\/view\/96659",
+      "name" : "Koha Live CD Release 3 (3.0.4 Ubuntu 9.10 Desktop x86)",
+      "peers" : 0,
+      "seeders" : 0,
+      "size" : "624.0 MiB"
+    },
+    "seconds" : 2,
+    "top" : 75
+  },
+  {
+    "cloudflare" : true,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/oxtorrent.co\/recherche\/ubuntu\")",
+    "id" : "oxtorrent",
+    "name" : "OxTorrent",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "id" : "rutorinfo",
+    "latest" : 100,
+    "magnet" : "ok",
+    "name" : "Rutor",
+    "results" : 100,
+    "sample" : {
+      "category" : "",
+      "date" : "2026-06-30T00:00:00Z",
+      "details" : "https:\/\/rutor.info\/torrent\/915382\/rufus-4.15-build-2396-2026-pc-portable",
+      "name" : "Rufus 4.15 (Build 2396) (2026) PC | Portable",
+      "peers" : 0,
+      "seeders" : 41,
+      "size" : "10.88 MB"
+    },
+    "seconds" : 2,
+    "top" : 272
+  },
+  {
+    "cloudflare" : false,
+    "id" : "subsplease",
+    "latest" : 60,
+    "magnet" : "ok",
+    "name" : "SubsPlease",
+    "results" : 90,
+    "sample" : {
+      "category" : "Anime",
+      "date" : "2025-12-07T16:02:00Z",
+      "details" : "https:\/\/subsplease.org\/one-piece?ep=1152&res=480",
+      "name" : "One Piece - 1152 [480p]",
+      "peers" : -1,
+      "seeders" : -1,
+      "size" : "364.21 MB"
+    },
+    "seconds" : 1
+  },
+  {
+    "cloudflare" : false,
+    "id" : "sukebeinyaa",
+    "latest" : 75,
+    "magnet" : "ok",
+    "name" : "Sukebei",
+    "results" : 75,
+    "sample" : {
+      "category" : "Porn",
+      "date" : "2026-09-17T02:53:40Z",
+      "details" : "https:\/\/sukebei.nyaa.si\/view\/4714285",
+      "name" : "[HD Uncensored] N0462 素人娘拉致監禁汁濁輪カン Amateur girl kidnapping confinement juvenile gangbang \/ Yuri Matsushita",
+      "peers" : 0,
+      "seeders" : 5,
+      "size" : "2.7 GiB"
+    },
+    "seconds" : 3,
+    "top" : 75
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/apibay.org\/q.php?q=ubuntu&cat=0\")",
+    "id" : "thepiratebay",
+    "name" : "ThePirateBay",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/therarbg.com\/get-posts\/keywords:ubuntu\")",
+    "id" : "therarbag",
+    "name" : "TheRarBg",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : true,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/tokyotosho.info\/search.php?terms=ubuntu&type=0&searchName=true\")",
+    "id" : "tokyotoshokan",
+    "name" : "TokyoToshokan",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/www6.torrent9.to\/search_torrent\/ubuntu.html\")",
+    "id" : "torrent9",
+    "name" : "Torrent9",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : true,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/developify.ca\/search?q=ubuntu\")",
+    "id" : "torrentdatabase",
+    "name" : "TorrentDatabase",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/torrentdownload.info\/search?q=ubuntu\")",
+    "id" : "torrentdownloadinfo",
+    "name" : "TorrentDownload",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : true,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/torrentdownloads.pro\/search\/?s_cat=0&search=ubuntu\")",
+    "id" : "torrentdownloads",
+    "name" : "TorrentDownloads",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/torrentkitty.tv\/search\/ubuntu\")",
+    "id" : "torrentkitty",
+    "name" : "TorrentKitty",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "id" : "torrentscsv",
+    "magnet" : "ok",
+    "name" : "TorrentsCSV",
+    "results" : 25,
+    "sample" : {
+      "category" : "Other",
+      "date" : "2026-07-16T15:01:08Z",
+      "details" : "",
+      "name" : "Clinton D., Negus C. Ubuntu Linux Bible 11ed 2025",
+      "peers" : 0,
+      "seeders" : 27,
+      "size" : "8.16 MB"
+    },
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "error" : "Error Domain=NSURLErrorDomain Code=-1003 \"(null)\"UserInfo={NSLocalizedDescription=Could not resolve host: torrentz2.nz, NSUnderlyingError=Error Domain=NSURLErrorDomain Code=-1003 \"(null)\"UserInfo={NSLocalizedDescription=Could not resolve host: torrentz2.nz}, NSErrorFailingURLKey=https:\/\/torrentz2.nz",
+    "id" : "torrentz",
+    "name" : "Torrentz",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : true,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/uindex.org\/search.php?search=ubuntu&c=0\")",
+    "id" : "uindex",
+    "name" : "UIndex",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/xxxclub.to\/torrents\/search\/all\/amateur\")",
+    "id" : "xxxclub",
+    "name" : "XXXClub",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "error" : "CloudflareChallengeError(url: \"https:\/\/xxxtor.com\/b.php?search=amateur\")",
+    "id" : "xxxtracker",
+    "name" : "XXXTracker",
+    "results" : -1,
+    "seconds" : 0
+  },
+  {
+    "cloudflare" : false,
+    "id" : "ytsmx",
+    "latest" : 38,
+    "magnet" : "ok",
+    "name" : "Yts",
+    "results" : 24,
+    "sample" : {
+      "category" : "Movies",
+      "date" : "2024-01-22T21:45:44Z",
+      "details" : "https:\/\/yts.gg\/movies\/matrix-generation-2024?movieid=59406&infohash=937c8886c8fd31240898b0de40de9e104a926f7e",
+      "name" : "Matrix: Generation (2024) [720p] [web] [x264]",
+      "peers" : 9,
+      "seeders" : 9,
+      "size" : "487.87 MB"
+    },
+    "seconds" : 1,
+    "top" : 38
+  }
+]

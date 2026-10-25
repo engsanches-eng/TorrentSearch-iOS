@@ -1,0 +1,205 @@
+Fetching https://github.com/scinfu/SwiftSoup.git
+Fetching https://github.com/apple/swift-crypto.git
+[1/7132] Fetching swiftsoup
+[1499/25991] Fetching swiftsoup, swift-crypto
+Fetched https://github.com/scinfu/SwiftSoup.git (1.31s)
+Fetched https://github.com/apple/swift-crypto.git (1.33s)
+Computing version for https://github.com/apple/swift-crypto.git
+Computed https://github.com/apple/swift-crypto.git at 3.15.1 (7.99s)
+Fetching https://github.com/apple/swift-asn1.git
+[1/2051] Fetching swift-asn1
+Fetched https://github.com/apple/swift-asn1.git (0.27s)
+Computing version for https://github.com/apple/swift-asn1.git
+Computed https://github.com/apple/swift-asn1.git at 1.7.3 (1.25s)
+Computing version for https://github.com/scinfu/SwiftSoup.git
+Computed https://github.com/scinfu/SwiftSoup.git at 2.14.3 (0.15s)
+Creating working copy for https://github.com/scinfu/SwiftSoup.git
+Working copy of https://github.com/scinfu/SwiftSoup.git resolved at 2.14.3
+Creating working copy for https://github.com/apple/swift-crypto.git
+Working copy of https://github.com/apple/swift-crypto.git resolved at 3.15.1
+Creating working copy for https://github.com/apple/swift-asn1.git
+Working copy of https://github.com/apple/swift-asn1.git resolved at 1.7.3
+Building for debugging...
+[Computing dependencies]
+[Constructing description]
+[Pre-planning 1 / 273]
+[Planning deferred tasks]
+[Starting]
+[55 / 465] CryptoBoringWrapper
+[57 / 475] CryptoBoringWrapper
+[59 / 475] CCryptoBoringSSL
+[60 / 475] CCryptoBoringSSL
+[66 / 475] CCryptoBoringSSL
+[69 / 475] SwiftSoup
+[70 / 475] CCryptoBoringSSL
+[77 / 475] CCryptoBoringSSL
+[79 / 475] CCryptoBoringSSL
+[80 / 475] CCryptoBoringSSL
+[83 / 475] CCryptoBoringSSL
+[87 / 475] CCryptoBoringSSL
+[88 / 475] CCryptoBoringSSL
+[90 / 475] CCryptoBoringSSL
+[92 / 475] CCryptoBoringSSL
+[93 / 475] CCryptoBoringSSL
+[95 / 475] CCryptoBoringSSL
+[97 / 475] CCryptoBoringSSL
+[100 / 475] CCryptoBoringSSL
+[101 / 475] CCryptoBoringSSL
+[103 / 475] CCryptoBoringSSL
+[104 / 475] CCryptoBoringSSL
+[106 / 475] CCryptoBoringSSL
+[111 / 475] CCryptoBoringSSL
+[118 / 475] CCryptoBoringSSL
+[120 / 475] CCryptoBoringSSL
+[122 / 475] CCryptoBoringSSL
+[123 / 475] CCryptoBoringSSL
+[126 / 475] CCryptoBoringSSL
+[127 / 475] CCryptoBoringSSL
+[130 / 475] CCryptoBoringSSL
+[131 / 475] CCryptoBoringSSL
+[133 / 475] CCryptoBoringSSL
+[134 / 475] CCryptoBoringSSL
+[135 / 475] CCryptoBoringSSL
+[139 / 475] CCryptoBoringSSL
+[142 / 475] CCryptoBoringSSL
+[143 / 475] CCryptoBoringSSL
+[145 / 475] CCryptoBoringSSL
+[148 / 475] CCryptoBoringSSL
+[152 / 475] CCryptoBoringSSL
+[153 / 475] CCryptoBoringSSL
+[155 / 475] CCryptoBoringSSL
+[157 / 475] CCryptoBoringSSL
+[158 / 475] CCryptoBoringSSL
+[160 / 475] CCryptoBoringSSL
+[161 / 475] CCryptoBoringSSL
+[163 / 475] CCryptoBoringSSL
+[166 / 475] CCryptoBoringSSL
+[173 / 475] CCryptoBoringSSL
+[178 / 475] CCryptoBoringSSL
+[185 / 475] CCryptoBoringSSL
+[191 / 475] CCryptoBoringSSL
+[197 / 475] CCryptoBoringSSL
+[200 / 475] CCryptoBoringSSL
+[204 / 475] CCryptoBoringSSL
+[207 / 475] CCryptoBoringSSL
+[209 / 475] CCryptoBoringSSL
+[210 / 475] CCryptoBoringSSL
+[214 / 475] CCryptoBoringSSL
+[216 / 475] CCryptoBoringSSL
+[217 / 475] CCryptoBoringSSL
+[219 / 475] CCryptoBoringSSL
+[220 / 475] CCryptoBoringSSL
+[222 / 475] CCryptoBoringSSL
+[223 / 475] CCryptoBoringSSL
+[226 / 475] CCryptoBoringSSL
+[227 / 475] CCryptoBoringSSL
+[228 / 475] CCryptoBoringSSL
+[230 / 475] CCryptoBoringSSL
+[233 / 475] CCryptoBoringSSL
+[237 / 475] CCryptoBoringSSL
+[240 / 475] CCryptoBoringSSL
+[241 / 475] CCryptoBoringSSL
+[242 / 475] CCryptoBoringSSL
+[245 / 475] CCryptoBoringSSL
+[249 / 475] CCryptoBoringSSL
+[253 / 475] CCryptoBoringSSL
+[258 / 475] CCryptoBoringSSL
+[259 / 475] CCryptoBoringSSL
+[263 / 475] CCryptoBoringSSL
+[266 / 475] CCryptoBoringSSL
+[268 / 475] CCryptoBoringSSL
+[270 / 475] CCryptoBoringSSL
+[272 / 475] CCryptoBoringSSL
+[273 / 475] CCryptoBoringSSL
+[279 / 475] CCryptoBoringSSL
+[287 / 475] CCryptoBoringSSL
+[294 / 475] CCryptoBoringSSL
+[297 / 475] CCryptoBoringSSL
+[303 / 475] CCryptoBoringSSL
+[304 / 475] CCryptoBoringSSL
+[305 / 475] CCryptoBoringSSL
+[307 / 475] CCryptoBoringSSL
+[309 / 475] CCryptoBoringSSL
+[311 / 475] CCryptoBoringSSL
+[313 / 475] CCryptoBoringSSL
+[315 / 475] CCryptoBoringSSL
+[317 / 475] CCryptoBoringSSL
+[319 / 475] CCryptoBoringSSL
+[320 / 475] CCryptoBoringSSL
+[324 / 475] CCryptoBoringSSL
+[326 / 475] CCryptoBoringSSL
+[327 / 475] CCryptoBoringSSL
+[330 / 475] CCryptoBoringSSL
+[331 / 475] CCryptoBoringSSL
+[333 / 475] CCryptoBoringSSL
+[335 / 475] CCryptoBoringSSL
+[338 / 475] CCryptoBoringSSL
+[341 / 475] CCryptoBoringSSL
+[344 / 475] CCryptoBoringSSL
+[348 / 475] CCryptoBoringSSL
+[351 / 475] CCryptoBoringSSL
+[357 / 475] CCryptoBoringSSL
+[360 / 475] CCryptoBoringSSL
+[366 / 475] CCryptoBoringSSL
+[368 / 475] CCryptoBoringSSL
+[369 / 475] CCryptoBoringSSL
+[373 / 475] CCryptoBoringSSL
+[376 / 475] CCryptoBoringSSL
+[382 / 475] CCryptoBoringSSL
+[385 / 475] CCryptoBoringSSL
+[388 / 475] CCryptoBoringSSL
+[392 / 475] CCryptoBoringSSL
+[396 / 475] CCryptoBoringSSL
+[402 / 475] CCryptoBoringSSL
+[408 / 475] CCryptoBoringSSL
+[412 / 475] CCryptoBoringSSL
+[417 / 475] CCryptoBoringSSL
+[419 / 475] CCryptoBoringSSL
+[420 / 475] CCryptoBoringSSL
+[423 / 475] CCryptoBoringSSL
+[424 / 475] CCryptoBoringSSL
+[427 / 475] CCryptoBoringSSL
+[429 / 475] CCryptoBoringSSL
+[431 / 475] CCryptoBoringSSL
+[433 / 475] SwiftSoup
+[434 / 475] SwiftSoup-product
+[436 / 475] CCryptoBoringSSL
+[438 / 475] SwiftSoup
+[439 / 475] CryptoBoringWrapper
+[440 / 475] Crypto
+[445 / 481] Crypto
+[446 / 482] CryptoBoringWrapper
+[448 / 482] Crypto
+[454 / 482] SwiftSoup
+[456 / 483] SwiftSoup
+[458 / 483] TorrentSearchCore
+[461 / 489] TorrentSearchCore
+/home/runner/work/TorrentSearch-iOS/TorrentSearch-iOS/Sources/TorrentSearchCore/Core/Net.swift:27:22: [1;33mwarning: [1;39mstored property 'session' of 'Sendable'-conforming class 'Net' is mutable; this is an error in the Swift 6 language mode[0;0m
+ [0;36m25 |[0;0m     private static let maxRetries = 3
+ [0;36m26 |[0;0m 
+ [0;36m27 |[0;0m     private lazy var session: URLSession = {
+    [0;36m|[0;0m                      `- [1;33mwarning: [1;39mstored property 'session' of 'Sendable'-conforming class 'Net' is mutable; this is an error in the Swift 6 language mode[0;0m
+ [0;36m28 |[0;0m         let c = URLSessionConfiguration.default
+ [0;36m29 |[0;0m         c.timeoutIntervalForRequest = 15
+[462 / 489] TorrentSearchCore
+[463 / 489] TorrentSearchCore
+[465 / 489] TorrentSearchCore
+/home/runner/work/TorrentSearch-iOS/TorrentSearch-iOS/Sources/TorrentSearchCore/Core/Net.swift:27:22: [1;33mwarning: [1;39mstored property 'session' of 'Sendable'-conforming class 'Net' is mutable; this is an error in the Swift 6 language mode[0;0m
+ [0;36m25 |[0;0m     private static let maxRetries = 3
+ [0;36m26 |[0;0m 
+ [0;36m27 |[0;0m     private lazy var session: URLSession = {
+    [0;36m|[0;0m                      `- [1;33mwarning: [1;39mstored property 'session' of 'Sendable'-conforming class 'Net' is mutable; this is an error in the Swift 6 language mode[0;0m
+ [0;36m28 |[0;0m         let c = URLSessionConfiguration.default
+ [0;36m29 |[0;0m         c.timeoutIntervalForRequest = 15
+[469 / 489] TorrentSearchCore
+[472 / 493] TorrentSearchCoreTests-product
+[474 / 494] Crypto
+[480 / 494] Crypto
+[480 / 494] TorrentSearchCoreTests-product
+[483 / 495] TorrentSearchCore
+[488 / 496] TorrentSearchCoreTests-product
+[489 / 496]
+[492 / 499] TorrentSearchCoreTests-test-runner
+[496 / 499] TorrentSearchCoreTests-test-runner
+[500 / 500] TorrentSearchCoreTests-test-runner
+Build complete! (54.23 secs)
