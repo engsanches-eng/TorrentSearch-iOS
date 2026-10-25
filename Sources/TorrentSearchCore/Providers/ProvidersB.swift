@@ -53,7 +53,7 @@ final class Ext: SearchProvider, LatestTorrentsProvider, TopTorrentsProvider, Ma
 
     private func parse(_ html: String, _ pageUrl: String) -> [Torrent] {
         let nameSel = "td:nth-child(1) > div:nth-child(1) > a.torrent-title-link"
-        return (Html.parse(html, baseUrl: pageUrl)?.all("table.search-table > tbody > tr") ?? []).compactMap { li in
+        return (Html.parse(html, baseUrl: pageUrl)?.all("table.search-table > tbody > tr") ?? []).compactMap { li -> Torrent? in
             guard let a = li.first(nameSel), let details = a.at("abs:href").nonBlank,
                   let rid = li.first("td:nth-child(1) > div:nth-child(2) > a.search-magnet-btn")?.at("data-id") else { return nil }
             let cat = li.first("td:nth-child(1) > div:nth-child(1) > div.related-posted > a:nth-child(2)").attrStr("href")
@@ -92,7 +92,7 @@ final class Eztv: SearchProvider {
     func search(query: String, category: Category) async throws -> [Torrent] {
         let u = "\(url)/search/\(query)"
         let html = try await net.getText(u, headers: ["Cookie": "layout=def_wlinks"])
-        return (Html.parse(html, baseUrl: u)?.all("table:last-of-type > tbody > tr") ?? []).dropFirst(2).compactMap { li in
+        return (Html.parse(html, baseUrl: u)?.all("table:last-of-type > tbody > tr") ?? []).dropFirst(2).compactMap { li -> Torrent? in
             guard let a = li.first("td:nth-child(2) > a.epinfo"),
                   let magnet = li.first("td:nth-child(3) > a.magnet")?.at("href"),
                   let hash = TorrentUtils.infoHash(magnet) else { return nil }
@@ -112,7 +112,7 @@ final class FileMood: SearchProvider {
 
     func search(query: String, category: Category) async throws -> [Torrent] {
         let u = "\(url)/result?q=\(query)+in%3Atitle"
-        return (Html.parse(try await net.getText(u), baseUrl: u)?.all("table > tbody > tr:has(a.btn-success)") ?? []).compactMap { li in
+        return (Html.parse(try await net.getText(u), baseUrl: u)?.all("table > tbody > tr:has(a.btn-success)") ?? []).compactMap { li -> Torrent? in
             guard let tname = li.first("> td.dn-title")?.txt,
                   let details = li.first("td.dn-btn > div > a")?.at("abs:href").nonBlank else { return nil }
             let hash = details.removingSuffix(".html").takeLastWhile { $0 != "-" }.lowercased().trimmed
@@ -142,7 +142,7 @@ final class FitGirlRepacks: SearchProvider, LatestTorrentsProvider, MagnetUriPro
         return m
     }
     private func parse(_ html: String, _ pageUrl: String) -> [Torrent] {
-        (Html.parse(html, baseUrl: pageUrl)?.all("article.category-lossless-repack") ?? []).compactMap { li in
+        (Html.parse(html, baseUrl: pageUrl)?.all("article.category-lossless-repack") ?? []).compactMap { li -> Torrent? in
             guard let a = li.first("header > h1.entry-title > a"), let details = a.at("abs:href").nonBlank else { return nil }
             let magnet: MagnetUri = li.first(#"div.entry-content a[href^="magnet:?xt="]"#).attrStr("href").nonBlank
                 .map { .available($0) } ?? .requiresFetch(details)
@@ -174,7 +174,7 @@ final class InternetArchive: SearchProvider {
         }
         u += "&fl%5B%5D=title,item_size,publicdate,mediatype,identifier,btih&rows=100&page=1&output=json"
         let json = try await net.getJson(u) as? JObj
-        return (json?.obj("response")?.objs("docs") ?? []).compactMap { o in
+        return (json?.obj("response")?.objs("docs") ?? []).compactMap { o -> Torrent? in
             guard let title = o.str("title"), let hash = o.str("btih")?.lowercased().trimmed else { return nil }
             let rid = o.str("identifier")
             return Torrent(id: torrentId(rid ?? hash), name: title, size: o.double("item_size").map(FileSizeUtils.formatBytes),
@@ -229,7 +229,7 @@ final class Knaben: SearchProvider, LatestTorrentsProvider, TopTorrentsProvider 
         return b
     }
     private func parse(_ json: Any?) -> [Torrent] {
-        ((json as? JObj)?.objs("hits") ?? []).compactMap { o in
+        ((json as? JObj)?.objs("hits") ?? []).compactMap { o -> Torrent? in
             guard let title = o.str("title"), let magnet = o.str("magnetUrl") else { return nil }
             let firstId = (o.arr("categoryId") ?? []).compactMap { ($0 as? NSNumber)?.int64Value ?? Int64("\($0)") }.min()
             var cat: Category = .all

@@ -60,7 +60,7 @@ final class AniRena: SearchProvider, LatestTorrentsProvider, TopTorrentsProvider
 
     private func parse(_ html: String, _ pageUrl: String) -> [Torrent] {
         let name = "td.col-name > div.tl-name-wrap > a.tl-torrent-name"
-        return (Html.parse(html, baseUrl: pageUrl)?.all("table.tl-table > tbody > tr") ?? []).compactMap { li in
+        return (Html.parse(html, baseUrl: pageUrl)?.all("table.tl-table > tbody > tr") ?? []).compactMap { li -> Torrent? in
             guard let tname = li.first(name)?.own,
                   let src = li.first("td.col-actions > div.tl-actions > a:nth-child(1)")?.at("abs:href") else { return nil }
             let remoteId = li.first(name)?.at("data-torrent-id").nonBlank ?? src.removingSurrounding("/torrrents/", "/magnet")
@@ -97,7 +97,7 @@ final class AnimeTosho: SearchProvider {
 
     func search(query: String, category: Category) async throws -> [Torrent] {
         let html = try await net.getText("\(url)/search?q=\(query)")
-        return (Html.parse(html)?.all("div.home_list_entry") ?? []).compactMap { e in
+        return (Html.parse(html)?.all("div.home_list_entry") ?? []).compactMap { e -> Torrent? in
             guard let a = e.first("div.link > a"), let details = a.at("href").nonBlank,
                   let links = e.first("div.links"),
                   let magnet = links.first(#"a[href^="magnet:"]"#)?.at("href") else { return nil }
@@ -142,7 +142,7 @@ final class AudioBookBay: SearchProvider, LatestTorrentsProvider, MagnetUriProvi
     }
 
     private func parse(_ html: String, _ pageUrl: String) -> [Torrent] {
-        (Html.parse(html, baseUrl: pageUrl)?.all("div.post") ?? []).compactMap { li in
+        (Html.parse(html, baseUrl: pageUrl)?.all("div.post") ?? []).compactMap { li -> Torrent? in
             guard let a = li.first("div.postTitle > h2 > a") else { return nil }
             let tname = a.own
             let details = a.at("abs:href")
@@ -165,7 +165,7 @@ final class BTDigg: SearchProvider {
 
     func search(query: String, category: Category) async throws -> [Torrent] {
         let u = "https://btdig.com/search?q=\(query)"
-        return (Html.parse(try await net.getText(u), baseUrl: u)?.all("div.one_result > div") ?? []).compactMap { li in
+        return (Html.parse(try await net.getText(u), baseUrl: u)?.all("div.one_result > div") ?? []).compactMap { li -> Torrent? in
             guard let a = li.first("div.torrent_name > a"),
                   let magnet = li.first("div.torrent_magnet > div.fa-magnet > a")?.at("href"),
                   let hash = TorrentUtils.infoHash(magnet) else { return nil }
@@ -190,7 +190,7 @@ final class BangumiMoe: SearchProvider, LatestTorrentsProvider {
         parse(try await net.getJson("\(url)/api/torrent/latest"))
     }
     private func parse(_ json: Any?) -> [Torrent] {
-        ((json as? JObj)?.objs("torrents") ?? []).compactMap { o in
+        ((json as? JObj)?.objs("torrents") ?? []).compactMap { o -> Torrent? in
             guard let title = o.str("title"), let magnet = o.str("magnet") else { return nil }
             let rid = o.str("_id")
             return Torrent(id: torrentId(rid ?? TorrentUtils.infoHash(magnet) ?? magnet), name: title, size: o.str("size"),
@@ -240,7 +240,7 @@ final class BitSearch: SearchProvider, LatestTorrentsProvider, TopTorrentsProvid
     private func parse(_ html: String, _ pageUrl: String) -> [Torrent] {
         let info = "> div:nth-child(1)", dl = "> div:nth-child(2)"
         let meta = "\(info) > div:nth-last-child(2)", swarm = "\(info) > div:nth-last-child(1)"
-        return (Html.parse(html, baseUrl: pageUrl)?.all("div.space-y-4 > div > div:nth-child(1)") ?? []).compactMap { li in
+        return (Html.parse(html, baseUrl: pageUrl)?.all("div.space-y-4 > div > div:nth-child(1)") ?? []).compactMap { li -> Torrent? in
             guard let nameEl = li.first("\(info) h3"),
                   let magnet = li.first("\(dl) > a:nth-child(2)")?.at("href"), !magnet.isEmpty else { return nil }
             let rid = nameEl.at("href").takeLastWhile { $0 != "/" }.nonBlank ?? TorrentUtils.infoHash(magnet) ?? magnet
@@ -277,7 +277,7 @@ final class BlueRoms: SearchProvider, MagnetUriProvider {
 
     func search(query: String, category: Category) async throws -> [Torrent] {
         let u = "\(url)/search?g=0&p=0&q=\(query)"
-        return (Html.parse(try await net.getText(u), baseUrl: u)?.all("div.row > div.col-xs-12 > div.card") ?? []).compactMap { li in
+        return (Html.parse(try await net.getText(u), baseUrl: u)?.all("div.row > div.col-xs-12 > div.card") ?? []).compactMap { li -> Torrent? in
             guard let dl = li.first("div.card-footer > a")?.at("abs:href").nonBlank,
                   let game = li.first("h4.card-title > a")?.own.nonBlank else { return nil }
             let platform = li.first("strong:containsOwn(Platform:)")?.nextEl?.own
@@ -321,7 +321,7 @@ final class Bt4g: SearchProvider, LatestTorrentsProvider, TopTorrentsProvider, M
         return TorrentUtils.createMagnetUri(hash)
     }
     private func parse(_ html: String, _ pageUrl: String) -> [Torrent] {
-        (Html.parse(html, baseUrl: pageUrl)?.all("div.notion-list-item") ?? []).compactMap { li in
+        (Html.parse(html, baseUrl: pageUrl)?.all("div.notion-list-item") ?? []).compactMap { li -> Torrent? in
             guard let a = li.first("div.notion-list-item-title > a"), let details = a.at("abs:href").nonBlank else { return nil }
             let raw = li.first("div.notion-list-item-meta > span:nth-child(2)")?.own.removingPrefix("Creation Time: ").trimmed
             return Torrent(id: torrentId(details.takeLastWhile { $0 != "/" }), name: a.txt,
@@ -353,7 +353,7 @@ final class Btsow: SearchProvider {
     func search(query: String, category: Category) async throws -> [Torrent] {
         let payload: [Any] = [["search": query], 30, 1]
         let json = try await net.postJson("https://btsow.live/bts/data/api/search", payload: payload)
-        return ((json as? JObj)?.objs("data") ?? []).compactMap { o in
+        return ((json as? JObj)?.objs("data") ?? []).compactMap { o -> Torrent? in
             guard let n = o.str("name")?.replacingOccurrences(of: "<em>", with: "").replacingOccurrences(of: "</em>", with: ""),
                   let hash = o.str("hash")?.lowercased() else { return nil }
             return Torrent(id: torrentId(hash), name: n, size: o.double("size").map(FileSizeUtils.formatBytes),
@@ -380,7 +380,7 @@ final class Dmhy: SearchProvider, LatestTorrentsProvider, TopTorrentsProvider {
     }
     func getTopTorrents(category: Category) async throws -> [Torrent] { try await getLatestTorrents(category: category) }
     private func parse(_ html: String, _ pageUrl: String) -> [Torrent] {
-        (Html.parse(html, baseUrl: pageUrl)?.all("table#topic_list > tbody > tr") ?? []).compactMap { li in
+        (Html.parse(html, baseUrl: pageUrl)?.all("table#topic_list > tbody > tr") ?? []).compactMap { li -> Torrent? in
             guard let a = li.first("td.title > a"),
                   let magnet = li.first(#"td:nth-child(4) > a[href^="magnet:?xt="]"#)?.at("href"),
                   let hash = TorrentUtils.infoHash(magnet) else { return nil }
@@ -428,7 +428,7 @@ final class EpubLibre: SearchProvider, LatestTorrentsProvider, TopTorrentsProvid
     }
     private func parse(_ json: Any?) -> [Torrent] {
         guard let html = (json as? JObj)?.str("contenido") else { return [] }
-        return (Html.parse(html)?.all("div.span2") ?? []).compactMap { li in
+        return (Html.parse(html)?.all("div.span2") ?? []).compactMap { li -> Torrent? in
             guard let book = li.first("a#stk > div.texto-portada > h1")?.own,
                   let details = li.first("a#stk")?.at("href").nonBlank else { return nil }
             var n = book

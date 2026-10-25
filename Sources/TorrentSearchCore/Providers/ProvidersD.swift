@@ -26,7 +26,7 @@ final class NoNameClub: SearchProvider, LatestTorrentsProvider, TopTorrentsProvi
         ]
         let html = try await net.submitForm(u, form: form)
         let sel = #"table.forumline.tablesorter > tbody > tr:has(a[href^="viewtopic.php?t="]):has(a[href^="download.php?id="])"#
-        return (Html.parse(html, baseUrl: u)?.all(sel) ?? []).compactMap { li in
+        return (Html.parse(html, baseUrl: u)?.all(sel) ?? []).compactMap { li -> Torrent? in
             guard let details = li.first(#"a[href^="viewtopic.php?t="]"#)?.at("abs:href").nonBlank,
                   let n = li.first(#"a[href^="viewtopic.php?t="] > b"#)?.own else { return nil }
             let catId = li.first(#"a[href^="tracker.php?f="]"#).attrStr("href")
@@ -61,7 +61,7 @@ final class NoNameClub: SearchProvider, LatestTorrentsProvider, TopTorrentsProvi
 
 // MARK: Nyaa e Sukebei (mesmo layout de página)
 private func parseNyaaTable(_ html: String, _ pageUrl: String, _ p: SearchProvider, fixedCategory: Category?) -> [Torrent] {
-    (Html.parse(html, baseUrl: pageUrl)?.all("table.torrent-list > tbody > tr") ?? []).compactMap { li in
+    (Html.parse(html, baseUrl: pageUrl)?.all("table.torrent-list > tbody > tr") ?? []).compactMap { li -> Torrent? in
         guard let a = li.first("td:nth-child(2) > a:not(.comments)"),
               let magnet = li.first("td:nth-child(3) > a:nth-child(2)")?.at("href"),
               let hash = TorrentUtils.infoHash(magnet) else { return nil }
@@ -150,7 +150,7 @@ final class OxTorrent: SearchProvider, LatestTorrentsProvider, TopTorrentsProvid
     func getMagnetUri(url: String) async throws -> String { try await fetchFirstMagnet(net, url, selector: "div.btn-magnet > a") }
 
     private func parse(_ html: String, _ pageUrl: String) -> [Torrent] {
-        (Html.parse(html, baseUrl: pageUrl)?.all("table > tbody > tr") ?? []).compactMap { li in
+        (Html.parse(html, baseUrl: pageUrl)?.all("table > tbody > tr") ?? []).compactMap { li -> Torrent? in
             guard let a = li.first("td:nth-child(1) > a"), let details = a.at("abs:href").nonBlank, !a.own.isEmpty else { return nil }
             let cls = (try? li.first("td:nth-child(1) > i")?.className()) ?? nil
             return Torrent(id: torrentId(details), name: a.own, size: li.first("td:nth-child(2)").ownStr,
@@ -229,7 +229,7 @@ final class SubsPlease: SearchProvider, LatestTorrentsProvider {
             let date = anime.str("release_date").flatMap(TorrentDateParser.parseRFC1123)
             let page = anime.str("page").map { "\(url)/\($0)" }
             let ep = anime.str("episode") ?? ""
-            return anime.objs("downloads").compactMap { d in
+            return anime.objs("downloads").compactMap { d -> Torrent? in
                 guard let magnet = d.str("magnet"), let hash = TorrentUtils.infoHash(magnet) else { return nil }
                 let res = d.str("res") ?? ""
                 let size = magnet.substringAfter("?").split(separator: "&").first { $0.hasPrefix("xl=") }

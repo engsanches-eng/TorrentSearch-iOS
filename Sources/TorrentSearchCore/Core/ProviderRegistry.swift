@@ -8,5 +8,6 @@ enum ProviderRegistry {
         Ext(), Eztv(), FileMood(), FitGirlRepacks(), InternetArchive(), Knaben(),
         LimeTorrents(), LinuxTracker(), MegaPeer(), Mikan(), MyPornClub(), NekoBT(),
         NoNameClub(), Nyaa(), OxTorrent(), Rutor(), SubsPlease(), Sukebei(),
+        ThePirateBay(), TheRarBg(), ThirteenThirtySevenX(), TokyoToshokan(), Torrent9(), TorrentDatabase(),
     ]
 }
