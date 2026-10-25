@@ -149,8 +149,8 @@ final class AudioBookBay: SearchProvider, LatestTorrentsProvider, MagnetUriProvi
             guard !tname.isEmpty, !details.isEmpty else { return nil }
             let info = li.first("div.postContent > p:nth-child(3)")?.wholeText.lines
             let size = info?.first { $0.hasPrefix("File Size: ") }?.substringAfter("File Size: ").trimmed.removingSuffix("s")
-            let date = info?.first { $0.hasPrefix("Posted: ") }?.substringAfter("Posted: ").trimmed
-                .flatMap { TorrentDateParser.parse($0, format: "d MMM yyyy") }
+            let rawDate = info?.first { $0.hasPrefix("Posted: ") }?.substringAfter("Posted: ").trimmed
+            let date = rawDate.flatMap { TorrentDateParser.parse($0, format: "d MMM yyyy") }
             return Torrent(id: torrentId(details), name: tname, size: size, providerName: name, uploadDate: date,
                            category: .books, detailsPageUrl: details, magnetUri: .requiresFetch(details))
         }

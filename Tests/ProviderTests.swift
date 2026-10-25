@@ -23,6 +23,26 @@ final class ProviderTests: XCTestCase {
         XCTAssertTrue(TorrentUtils.createTorrentId(providerId: "x", sourceId: "y").hasPrefix("x:"))
     }
 
+    func testTorznabParser() {
+        let xml = """
+        <?xml version="1.0" encoding="UTF-8"?>
+        <rss version="2.0" xmlns:torznab="http://torznab.com/schemas/2015/feed"><channel>
+        <item><title>Ubuntu 24.04</title><comments>https://x/details/1</comments><pubDate>Sat, 25 Oct 2025 10:00:00 +0000</pubDate>
+        <size>1073741824</size><enclosure url="https://x/dl/1.torrent" type="application/x-bittorrent"/>
+        <torznab:attr name="seeders" value="10"/><torznab:attr name="peers" value="12"/>
+        <torznab:attr name="infohash" value="abc"/><torznab:attr name="magneturl" value="magnet:?xt=urn:btih:abc"/>
+        <torznab:attr name="category" value="4000"/></item>
+        </channel></rss>
+        """
+        let r = TorznabResultsParser.parse(xml, providerId: "t", providerName: "T")
+        XCTAssertEqual(r.count, 1)
+        XCTAssertEqual(r.first?.seeders, 10)
+        XCTAssertEqual(r.first?.category, .apps)
+        XCTAssertEqual(r.first?.size, "1.00 GB")
+        XCTAssertNotNil(r.first?.uploadDate)
+        XCTAssertEqual(TorznabUtils.normalizeApiUrl("http://h:9117/api/v2.0/indexers/all/results/torznab/"), "http://h:9117/api/v2.0/indexers/all/results/torznab/api")
+    }
+
     /// Teste ao vivo contra os sites reais (só roda com LIVE=1 no CI).
     /// Grava um relatório JSON com o resultado de cada buscador.
     func testLiveSearch() async throws {

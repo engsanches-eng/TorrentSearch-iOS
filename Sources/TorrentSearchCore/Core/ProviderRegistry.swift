@@ -9,5 +9,7 @@ enum ProviderRegistry {
         LimeTorrents(), LinuxTracker(), MegaPeer(), Mikan(), MyPornClub(), NekoBT(),
         NoNameClub(), Nyaa(), OxTorrent(), Rutor(), SubsPlease(), Sukebei(),
         ThePirateBay(), TheRarBg(), ThirteenThirtySevenX(), TokyoToshokan(), Torrent9(), TorrentDatabase(),
+        TorrentDownload(), TorrentDownloads(), TorrentKitty(), TorrentsCSV(), Torrentz(), UIndex(),
+        XXXClub(), XXXTracker(), Yts(), ZeroMagnet(),
     ]
 }
